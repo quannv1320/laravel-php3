@@ -26,16 +26,16 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $menu = [
-            "Dashboard" => [
-                'url' => route('homepage'),
-                'text' => 'Dashboard',
-                'hasChild' => false
-            ],
-            "Danh mục"=> [
+        // $menu = [
+        //     "Dashboard" => [
+        //         'url' => route('homepage'),
+        //         'text' => 'Dashboard',
+        //         'hasChild' => false
+        //     ],
+        //     "Danh mục"=> [
                 
-            ]
-        ];
+        //     ]
+        // ];
         View::composer('cate.index', function ($view) {
             $view->with('composerVariable', "PT15211-WEB-PHP3");
         });

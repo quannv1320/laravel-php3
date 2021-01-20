@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 use Illuminate\Http\Request;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+
 
 
 Route::get('/', function () {
@@ -21,6 +23,9 @@ Route::get('/', function () {
 });
 
 Route::get('danh-muc', [CategoryController::class, 'index'])->name('cate.index');
+
+Route::get('san-pham', [ProductController::class, 'index'])->name('pro.index');
+
 
 Route::get('danh-muc/{id}/remove', [CategoryController::class, 'remove'])->name('cate.remove');
 

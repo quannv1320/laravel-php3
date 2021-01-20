@@ -8,12 +8,15 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     public function index(Request $request) {
+        //search
         if($request->keyword){
             $cates = Category::where(
                     'name', 'like', "%".$request->keyword."%"
                 )->paginate(10);
             $cates->withPath('?keyword=' . $request->keyword);
+        //endSearch
         }else{
+        //in ra màn hình
             $cates = Category::paginate(10);
         }
 
