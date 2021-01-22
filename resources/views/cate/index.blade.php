@@ -14,7 +14,7 @@
             <th>Tên danh mục</th>
             <th>Miêu tả</th>
             <th>
-                <a class="btn btn-success" href="">Tạo mới</a>
+                <a class="btn btn-success" href="{{ route('cate.add') }}">Tạo mới</a>
             </th>
         </thead>
         <tbody>
@@ -24,7 +24,7 @@
                 <td>{{$item->name}}</td>
                 <td>{{$item->detail}}</td>
                 <td>
-                    <a class="btn btn-primary" href="">Sửa</a>
+                    <a class="btn btn-primary" href="{{route('cate.edit', ['id' => $item->id])}}">Sửa</a>
                     <a class="btn btn-danger" href="{{route('cate.remove', ['id' => $item->id])}}">Xóa</a>
                 </td>
             </tr>

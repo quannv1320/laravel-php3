@@ -24,6 +24,16 @@ Route::get('/', function () {
 
 Route::get('danh-muc', [CategoryController::class, 'index'])->name('cate.index');
 
+Route::get('danh-muc/add', [CategoryController::class, 'addForm'])->name('cate.add');
+Route::post('danh-muc/add', [CategoryController::class, 'saveAdd']);
+
+Route::get('danh-muc/edit/{id}', [CategoryController::class, 'editForm'])->name('cate.edit');
+Route::post('danh-muc/edit/{id}', [CategoryController::class, 'saveEdit'])->name('cate.edit');
+
+
+
+
+
 Route::get('san-pham', [ProductController::class, 'index'])->name('pro.index');
 
 
