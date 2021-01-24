@@ -15,13 +15,13 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 191)->unique(); //unique(): duy nhất
+            $table->string('name', 191)->unique();
             $table->integer('price');
-            $table->string('description');
             $table->unsignedBigInteger('cate_id');
             $table->timestamps();
 
-            $table->foreign('cate_id')->references('id')->on('categories');
+            $table->foreign('cate_id')
+                    ->references('id')->on('categories');
         });
     }
 

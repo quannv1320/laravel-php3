@@ -21,9 +21,9 @@ class ProductSeeder extends Seeder
             $model -> fill([
                 'name' => $faker->name,
                 'price' => $faker->numberBetween($min = 1000, $max = 10000000),
-                'description' => $faker->realText(150, 2),
-                'cate_id' => rand(1, 50),
-                // 'views' => $faker->rand(1,100),
+                'cate_id' => rand(9, 30),
+                'detail' => $faker->realText(150, 2),
+                'image'=> "images/anh-".rand(1, 5).".jpg"
                 
             ]);
             $model->save();

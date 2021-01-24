@@ -14,10 +14,10 @@ class AlterTableProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
             $table->bigInteger('price')->default(0)->change();
             $table->bigInteger('promotion_price')->default(0);
-            $table->string('image', 191)->default('iamges/default.jpg');
+            $table->string('image', 191)->default('images/default.jpg');
+            $table->text('detail')->nullable();
             $table->integer('views')->default(0);
         });
     }

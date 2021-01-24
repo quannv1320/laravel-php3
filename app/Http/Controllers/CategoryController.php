@@ -21,6 +21,8 @@ class CategoryController extends Controller
             $cates = Category::paginate(10);
         }
 
+        $cates->load('products');
+
         return view('cate.index', ['cates' => $cates,
                                     'keyword' => $request->keyword,
                                 ]);

@@ -29,15 +29,17 @@ Route::post('danh-muc/add', [CategoryController::class, 'saveAdd']);
 
 Route::get('danh-muc/edit/{id}', [CategoryController::class, 'editForm'])->name('cate.edit');
 Route::post('danh-muc/edit/{id}', [CategoryController::class, 'saveEdit'])->name('cate.edit');
-
+Route::get('danh-muc/{id}/remove', [CategoryController::class, 'remove'])->name('cate.remove');
 
 
 
 
 Route::get('san-pham', [ProductController::class, 'index'])->name('pro.index');
+Route::get('san-pham/{id}/remove', [ProductController::class, 'remove'])->name('pro.remove');
 
 
-Route::get('danh-muc/{id}/remove', [CategoryController::class, 'remove'])->name('cate.remove');
+
+
 
 
 // Route::get('/login', function () {

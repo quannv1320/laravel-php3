@@ -13,6 +13,7 @@
             <th>ID</th>
             <th>Tên danh mục</th>
             <th>Miêu tả</th>
+            <th>Số lượng sản phẩm</th>
             <th>
                 <a class="btn btn-success" href="{{ route('cate.add') }}">Tạo mới</a>
             </th>
@@ -23,6 +24,7 @@
                 <td>{{$item->id}}</td>
                 <td>{{$item->name}}</td>
                 <td>{{$item->detail}}</td>
+                <td>{{ count($item->products) }}</td>
                 <td>
                     <a class="btn btn-primary" href="{{route('cate.edit', ['id' => $item->id])}}">Sửa</a>
                     <a class="btn btn-danger" href="{{route('cate.remove', ['id' => $item->id])}}">Xóa</a>
