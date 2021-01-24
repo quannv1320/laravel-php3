@@ -8,7 +8,7 @@ class AlterTableProducts extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * testGit5
      * @return void
      */
     public function up()
