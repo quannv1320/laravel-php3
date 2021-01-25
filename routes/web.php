@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+
 
 
 
@@ -37,6 +39,7 @@ Route::get('danh-muc/{id}/remove', [CategoryController::class, 'remove'])->name(
 Route::get('san-pham', [ProductController::class, 'index'])->name('pro.index');
 Route::get('san-pham/{id}/remove', [ProductController::class, 'remove'])->name('pro.remove');
 
+Route::get('order', [OrderController::class, 'index'])->name('order.index');
 
 
 //testGit
