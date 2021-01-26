@@ -10,4 +10,10 @@ class OrderDetail extends Model
     use HasFactory;
     protected $table = 'order_details';
 
+
+    // public function product(){
+    //     return $this->hasOne(
+    //         Product::class
+    //     );
+    // }
 }

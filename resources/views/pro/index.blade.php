@@ -26,9 +26,7 @@
                     <img src="{{asset($product->image)}}" width="70">
                 </td>
                 <td>
-                    @foreach ($product->order as $orderPro)
-                    {{number_format($orderPro->total_price, 0, '.', '.') . " vnđ"}}
-                    @endforeach
+                    {{ $product->orderDetail->quantity }}
                 </td>
                 <td>
                     <a class="btn btn-primary" href="">Sửa</a>
