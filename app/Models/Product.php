@@ -15,4 +15,13 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class, 'cate_id');
     }
+
+    public function order(){
+        return $this->belongsToMany(
+            Order::class, 
+            'products', 
+            'id',
+            'id'
+        );
+    }
 }

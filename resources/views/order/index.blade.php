@@ -27,6 +27,7 @@
                                 <table class="table table-hovered">
                                     <thead>
                                         <th>STT</th>
+                                        <th>ID sản phẩm</th>
                                         <th>Tên sản phẩm</th>
                                         <th>Ảnh sản phẩm</th>
                                         <th>Số lượng</th>
@@ -39,6 +40,7 @@
                                             @endphp
                                             <tr>
                                                 <td>{{$loop->iteration}}</td>
+                                                <td>{{$pro->id}}</td>
                                                 <td>{{$pro->name}}</td>
                                                 <td>
                                                     <img src="{{asset($pro->image)}}" width="70">

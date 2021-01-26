@@ -10,8 +10,4 @@ class OrderDetail extends Model
     use HasFactory;
     protected $table = 'order_details';
 
-    public function Order()
-    {
-        return $this->hasMany(OrderDetail::class, 'order_id');
-    }
 }

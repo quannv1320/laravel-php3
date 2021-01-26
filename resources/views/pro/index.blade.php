@@ -11,7 +11,7 @@
             <th>Tên sản phẩm</th>
             <th>Danh mục</th>
             <th>Ảnh</th>
-            <th>Miêu tả</th>
+            <th>Doanh số</th>
             <th>
                 <a class="btn btn-success" href="">Tạo mới</a>
             </th>
@@ -25,7 +25,11 @@
                 <td>
                     <img src="{{asset($product->image)}}" width="70">
                 </td>
-                <td>{{$product->description}}</td>
+                <td>
+                    @foreach ($product->order as $orderPro)
+                    {{number_format($orderPro->total_price, 0, '.', '.') . " vnđ"}}
+                    @endforeach
+                </td>
                 <td>
                     <a class="btn btn-primary" href="">Sửa</a>
                     <a class="btn btn-danger" href="{{route('pro.remove', ['id' => $product->id])}}">Xóa</a>
