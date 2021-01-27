@@ -11,9 +11,7 @@ class OrderDetail extends Model
     protected $table = 'order_details';
 
 
-    // public function product(){
-    //     return $this->hasOne(
-    //         Product::class
-    //     );
-    // }
+    public function product(){
+        return $this->belongsTo(Product::class, 'cate_id');
+    }
 }

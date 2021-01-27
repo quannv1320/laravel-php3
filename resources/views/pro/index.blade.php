@@ -26,7 +26,14 @@
                     <img src="{{asset($product->image)}}" width="70">
                 </td>
                 <td>
-                    {{ $product->orderDetail->quantity }}
+                    @php
+                        $totalSellProduct = 0;
+                        foreach ($product->orderDetail as $item) {
+                            $totalSellProduct += $item->quantity;
+                        }
+                    @endphp
+                    {{number_format($totalSellProduct *  $product->price, 0, '.', '.') . " vnđ"}}
+
                 </td>
                 <td>
                     <a class="btn btn-primary" href="">Sửa</a>

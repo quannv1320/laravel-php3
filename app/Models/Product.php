@@ -17,8 +17,17 @@ class Product extends Model
     }
 
     public function orderDetail(){
-        return $this->hasOne(
-            OrderDetail::class, 'product_id', 'id'
+        return $this->hasMany(
+            OrderDetail::class, 'product_id'
         );
+    }
+    public function so_luong_da_ban()
+    {
+        $orderDetails = $this->orderDetail;
+        $totalSellProduct = 0;
+        foreach($orderDetails as $item){
+            $totalSellProduct += $item->quantity;
+        }
+        return $totalSellProduct;
     }
 }
