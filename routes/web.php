@@ -38,12 +38,12 @@ Route::prefix('danh-muc')
     ->middleware('auth')
     ->group(function(){
         Route::get('/', [CategoryController::class, 'index'])->name('cate.index');
-        Route::get('danh-muc/add', [CategoryController::class, 'addForm'])->name('cate.add');
-        Route::post('danh-muc/add', [CategoryController::class, 'saveAdd']);
-        Route::get('danh-muc/edit/{id}', [CategoryController::class, 'editForm'])->name('cate.edit');
-        Route::post('danh-muc/edit/{id}', [CategoryController::class, 'saveEdit'])->name('cate.edit');
-        Route::get('danh-muc/{id}/remove', [CategoryController::class, 'remove'])->name('cate.remove');
-    });
+        Route::get('/add', [CategoryController::class, 'addForm'])->name('cate.add');
+        Route::post('/add', [CategoryController::class, 'saveAdd']);
+        Route::get('/edit/{id}', [CategoryController::class, 'editForm'])->name('cate.edit');
+        Route::post('/edit/{id}', [CategoryController::class, 'saveEdit'])->name('cate.edit');
+        Route::get('/{id}/remove', [CategoryController::class, 'remove'])->name('cate.remove');
+});
 
 
 
