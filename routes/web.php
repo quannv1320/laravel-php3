@@ -17,6 +17,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\HomeController;
 
 
 
@@ -53,10 +55,17 @@ Route::get('san-pham/{id}/remove', [ProductController::class, 'remove'])->name('
 Route::get('order', [OrderController::class, 'index'])->name('order.index');
 
 
-//testGit
-//testGit2
-//testGit3
+Route::get('upload', [UploadController::class, 'uploadForm'])->name('uploadForm');
+Route::post('upload', [UploadController::class, 'uploadFile']);
 
+
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
+
+Route::get('sendMail', [HomeController::class, 'sendmail']);
 
 // Route::get('/login', function () {
 //     $name = "FPT poly";

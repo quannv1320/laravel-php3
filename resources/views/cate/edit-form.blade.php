@@ -22,13 +22,6 @@
                     <span class="text-danger">{{ $errors->first('name')}}</span>
                 @endif
             </div>
-            <div class="form-group">
-                <label for="">Mô tả</label>
-                <textarea name="detail" class="form-control">{{ old('detail', $model->detail) }}</textarea>
-                @if ($errors->has('detail'))
-                    <span class="text-danger">{{ $errors->first('detail')}}</span>
-                @endif
-            </div>
             <div class="text-center">
                 <button class="btn btn-success" type="submit">Cập nhật</button>
                 <a href="{{ route('cate.index') }}" class="btn btn-warning">Hủy</a>
